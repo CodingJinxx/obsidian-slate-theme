@@ -25,7 +25,7 @@ Slate is the Obsidian version of the **Slate design system**: the same tokens (c
 
 **By hand:** download `theme.css` and `manifest.json` from the [latest release](https://github.com/CodingJinxx/obsidian-slate-theme/releases/latest) into a folder named `Slate` inside `<your vault>/.obsidian/themes/`, then pick *Slate* under *Settings → Appearance → Themes*.
 
-Nothing is loaded from the network: the font is embedded in `theme.css`.
+Nothing is loaded from the network: the font is embedded in `theme.css` as a Latin subset (`scripts/subset-fonts.py`).
 
 ## What it looks like
 
@@ -79,5 +79,5 @@ Slate is free and open source. If you like it, you can [buy me a coffee](https:/
 ## Credits and licence
 
 - The Slate design system's tokens and look.
-- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono), © The JetBrains Mono Project Authors, under the [SIL Open Font License 1.1](fonts/OFL.txt), embedded in `theme.css`.
+- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono), © The JetBrains Mono Project Authors, under the [SIL Open Font License 1.1](fonts/OFL.txt), embedded in `theme.css` as a Latin subset (`scripts/subset-fonts.py`).
 - Everything else: © Jay Leimer, under the [PolyForm Noncommercial License 1.0.0](LICENSE). In short: free to use, copy and change for personal and other non-commercial purposes; commercial use, including selling the theme or bundling it in a paid product, needs the author's permission. This is source-available, not open source. JetBrains Mono keeps its own free licence (above).

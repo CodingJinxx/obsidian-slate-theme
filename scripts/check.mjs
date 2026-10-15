@@ -31,6 +31,7 @@ if (/expression\(|javascript:/i.test(rules)) fail('theme.css: scripting in CSS')
 const open = (rules.match(/{/g) ?? []).length;
 const close = (rules.match(/}/g) ?? []).length;
 if (open !== close) fail(`theme.css: unbalanced braces (${open} open, ${close} close)`);
+if (css.length > 100 * 1024) fail(`theme.css is ${(css.length / 1024).toFixed(0)} KB; Obsidian warns above its recommended size, keep it under 100 KB`);
 if (!existsSync(join(root, 'screenshot.png'))) fail('screenshot.png is missing (needed for the community theme list)');
 
 if (errors.length) {

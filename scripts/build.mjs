@@ -10,7 +10,6 @@ const manifest = JSON.parse(readFileSync(join(root, 'manifest.json'), 'utf8'));
 
 const FONTS = [
 	{ file: 'JetBrainsMono-400.woff2', weight: 400 },
-	{ file: 'JetBrainsMono-500.woff2', weight: 500 },
 	{ file: 'JetBrainsMono-700.woff2', weight: 700 },
 ];
 
@@ -27,7 +26,7 @@ export function build() {
 		.filter((name) => name.endsWith('.css'))
 		.sort()
 		.map((name) => readFileSync(join(root, 'src', name), 'utf8').replace(/\r\n/g, '\n').trimEnd() + '\n');
-	return header + '/* JetBrains Mono 400, 500 and 700 (latin), embedded so the theme works offline. */\n' + fontFaces() + '\n' + sources.join('\n');
+	return header + '/* JetBrains Mono 400 and 700, subset to Latin (see scripts/subset-fonts.py), embedded so the theme works offline. */\n' + fontFaces() + '\n' + sources.join('\n');
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
