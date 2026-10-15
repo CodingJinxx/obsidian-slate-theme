@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. The format follows [Keep 
 
 ## [Unreleased]
 
+### Changed
+
+- Smaller `theme.css` (53 KB instead of 116 KB): the embedded JetBrains Mono is now a Latin subset in weights 400 and 700 (weight 500 renders as regular), as Obsidian's review recommends. `npm run check` fails above 100 KB.
+
 ## [0.1.0] - 2026-10-15
 
 First public release, under the [PolyForm Noncommercial License 1.0.0](LICENSE): free for personal and other non-commercial use, commercial use needs permission.
