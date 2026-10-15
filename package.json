@@ -21,7 +21,7 @@
 		"mocha": "^10.8.2",
 		"obsidian-launcher": "^3.3.0",
 		"tsx": "^4.23.15",
-		"typescript": "^5.9.3",
+		"typescript": "^7.0.2",
 		"wdio-obsidian-reporter": "^3.3.0",
 		"wdio-obsidian-service": "^3.3.0"
 	}
