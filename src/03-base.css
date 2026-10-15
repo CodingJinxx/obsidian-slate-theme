@@ -1,0 +1,84 @@
+/* ---- Base --------------------------------------------------------------
+ * One monospace family with ligatures off, tabular figures, square
+ * scrollbars and the focus ring.
+ */
+
+body {
+	font-variant-ligatures: none;
+	font-feature-settings: 'liga' 0, 'calt' 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Numbers line up in tables, counters and the status bar. */
+.markdown-rendered table,
+.markdown-source-view.mod-cm6 .cm-table-widget,
+.status-bar,
+.tree-item-flair,
+.search-result-file-matches {
+	font-variant-numeric: tabular-nums;
+}
+
+/* Scrollbars: square, 10 px, border-2 thumb (border-strong while active). */
+::-webkit-scrollbar {
+	width: var(--sl-size-scrollbar);
+	height: var(--sl-size-scrollbar);
+	background-color: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-thumb-bg);
+	border: 2px solid var(--scrollbar-bg);
+	border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+	background-color: var(--scrollbar-active-thumb-bg);
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+	background-color: var(--scrollbar-bg);
+}
+
+/* Focus: a 2 px solid ring, 1 px off the edge, for keyboard users only. */
+body :is(button, [role='button'], .clickable-icon, .checkbox-container, select, .dropdown, a, .tree-item-self, .vertical-tab-nav-item, .suggestion-item):focus-visible {
+	outline: 2px solid var(--sl-color-focus);
+	outline-offset: var(--sl-focus-offset);
+	box-shadow: none;
+}
+
+body :is(input, textarea):focus-visible {
+	outline: 2px solid var(--sl-color-focus);
+	outline-offset: var(--sl-focus-offset);
+}
+
+/* Selection uses the accent wash; the text keeps its colour. */
+::selection {
+	background-color: var(--sl-color-accent-soft);
+}
+
+/* Headings in the note: small caps-style sixth level, strong rule under the first. */
+.markdown-rendered h6,
+.markdown-source-view.mod-cm6 .HyperMD-header-6 {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-source-view.mod-cm6 .cm-header-1,
+.markdown-source-view.mod-cm6 .cm-header-2,
+.markdown-source-view.mod-cm6 .cm-header-3 {
+	letter-spacing: -0.01em;
+}
+
+/* Horizontal rule: the 2 px section rule. */
+.markdown-rendered hr,
+.markdown-source-view.mod-cm6 .cm-hr,
+.markdown-source-view.mod-cm6 hr {
+	border: 0;
+	border-top: var(--sl-border-width-strong) solid var(--hr-color);
+}

@@ -1,0 +1,360 @@
+/* ---- Obsidian variables ------------------------------------------------
+ * Maps the Slate tokens onto the variables Obsidian and most plugins use.
+ * Colours first, then type, shape and sizes.
+ */
+
+body {
+	/* Type: one family everywhere, ligatures off (see 03-base.css). */
+	--font-default: var(--sl-font);
+	--font-interface-theme: var(--sl-font);
+	--font-text-theme: var(--sl-font);
+	--font-monospace-theme: var(--sl-font);
+	--font-editor-theme: var(--sl-font);
+	--font-text-size: 14px;
+
+	--font-ui-smaller: 10.5px;
+	--font-ui-small: 11.5px;
+	--font-ui-medium: 12.5px;
+	--font-ui-large: 14px;
+	--font-smallest: 0.8em;
+	--font-smaller: 0.875em;
+	--font-small: 0.9375em;
+
+	--line-height-normal: 1.6;
+	--line-height-tight: 1.35;
+
+	--bold-weight: 700;
+	--bold-modifier: 200;
+	--normal-weight: 400;
+	--medium-weight: 500;
+	--semibold-weight: 700;
+
+	/* Square edges everywhere. */
+	--radius-s: 0;
+	--radius-m: 0;
+	--radius-l: 0;
+	--radius-xl: 0;
+	--clickable-icon-radius: 0;
+	--checkbox-radius: 0;
+	--toggle-radius: 0;
+	--toggle-thumb-radius: 0;
+	--tag-radius: 0;
+	--callout-radius: 0;
+	--button-radius: 0;
+	--input-radius: 0;
+	--modal-radius: 0;
+	--popover-radius: 0;
+	--indentation-guide-width: 1px;
+
+	--border-width: var(--sl-border-width);
+	--input-border-width: var(--sl-border-width);
+	--modal-border-width: var(--sl-border-width);
+	--divider-width: var(--sl-border-width);
+	--divider-width-hover: var(--sl-border-width-strong);
+
+	/* Dense controls (Slate: 22, 26 and 32 px). */
+	--input-height: var(--sl-size-control-md);
+	--input-shadow: none;
+	--input-shadow-hover: none;
+	--tab-container-height: 34px;
+
+	/* Hard offset shadows, no blur. */
+	--shadow-s: var(--sl-shadow-popover);
+	--shadow-l: var(--sl-shadow-overlay);
+
+	/* Headings: weight and size do the work, no colour. */
+	--h1-size: 1.85em;
+	--h2-size: 1.5em;
+	--h3-size: 1.25em;
+	--h4-size: 1.1em;
+	--h5-size: 1em;
+	--h6-size: 0.85em;
+	--h1-weight: 700;
+	--h2-weight: 700;
+	--h3-weight: 700;
+	--h4-weight: 700;
+	--h5-weight: 700;
+	--h6-weight: 500;
+	--h1-line-height: 1.25;
+	--h2-line-height: 1.3;
+	--h3-line-height: 1.35;
+	--h4-line-height: 1.4;
+	--h5-line-height: 1.5;
+	--h6-line-height: 1.5;
+	--h1-color: var(--text-normal);
+	--h2-color: var(--text-normal);
+	--h3-color: var(--text-normal);
+	--h4-color: var(--text-normal);
+	--h5-color: var(--text-normal);
+	--h6-color: var(--text-muted);
+	--h1-style: normal;
+	--h2-style: normal;
+	--h3-style: normal;
+	--h4-style: normal;
+	--h5-style: normal;
+	--h6-style: normal;
+	--h6-variant: normal;
+}
+
+.theme-light,
+.theme-dark {
+	/* The accent: HSL so Obsidian's derived accent steps follow. */
+	--accent-h: 25;
+	--accent-s: 79%;
+	--accent-l: 57%;
+
+	/* Neutral scale. */
+	--color-base-00: var(--sl-color-surface);
+	--color-base-05: var(--sl-color-panel);
+	--color-base-10: var(--sl-color-bg);
+	--color-base-20: var(--sl-color-raised);
+	--color-base-25: var(--sl-color-hover);
+	--color-base-30: var(--sl-color-border);
+	--color-base-35: var(--sl-color-border-2);
+	--color-base-40: var(--sl-color-border-2);
+	--color-base-50: var(--sl-color-border-strong);
+	--color-base-60: var(--sl-color-muted);
+	--color-base-70: var(--sl-color-text-2);
+	--color-base-100: var(--sl-color-text);
+
+	/* Status and agent colours. */
+	--color-red: var(--sl-color-crit);
+	--color-green: var(--sl-color-ok);
+	--color-yellow: var(--sl-color-warn);
+	--color-purple: var(--sl-color-agent);
+	--color-orange: var(--sl-color-accent-text);
+	--color-blue: var(--sl-color-text-2);
+	--color-cyan: var(--sl-color-muted);
+	--color-pink: var(--sl-color-crit);
+	--color-red-rgb: var(--sl-rgb-crit);
+	--color-green-rgb: var(--sl-rgb-ok);
+	--color-yellow-rgb: var(--sl-rgb-warn);
+	--color-purple-rgb: var(--sl-rgb-agent);
+	--color-orange-rgb: var(--sl-rgb-accent);
+	--color-blue-rgb: var(--sl-rgb-neutral);
+	--color-cyan-rgb: var(--sl-rgb-neutral);
+	--color-pink-rgb: var(--sl-rgb-crit);
+
+	--color-accent: var(--sl-color-accent-text);
+	--color-accent-1: var(--sl-color-accent);
+	--color-accent-2: var(--sl-color-accent-hover);
+
+	/* Surfaces. */
+	--background-primary: var(--sl-color-bg);
+	--background-primary-alt: var(--sl-color-panel);
+	--background-secondary: var(--sl-color-panel);
+	--background-secondary-alt: var(--sl-color-bg);
+	--background-modifier-hover: var(--sl-color-hover);
+	--background-modifier-active-hover: var(--sl-color-accent-soft);
+	--background-modifier-border: var(--sl-color-border);
+	--background-modifier-border-hover: var(--sl-color-border-2);
+	--background-modifier-border-focus: var(--sl-color-accent-edge);
+	--background-modifier-error: var(--sl-color-crit);
+	--background-modifier-error-rgb: var(--sl-rgb-crit);
+	--background-modifier-error-hover: var(--sl-color-crit);
+	--background-modifier-success: var(--sl-color-ok);
+	--background-modifier-success-rgb: var(--sl-rgb-ok);
+	--background-modifier-message: var(--sl-color-surface);
+	--background-modifier-form-field: var(--sl-color-surface);
+	--background-modifier-cover: var(--sl-color-scrim);
+
+	/* Text. */
+	--text-normal: var(--sl-color-text);
+	--text-muted: var(--sl-color-text-2);
+	--text-faint: var(--sl-color-muted);
+	--text-on-accent: var(--sl-color-on-accent);
+	--text-on-accent-inverted: var(--sl-color-on-accent);
+	--text-error: var(--sl-color-crit);
+	--text-success: var(--sl-color-ok);
+	--text-warning: var(--sl-color-warn);
+	--text-accent: var(--sl-color-accent-text);
+	--text-accent-hover: var(--sl-color-accent-edge);
+	--text-selection: var(--sl-color-accent-soft);
+	--text-highlight-bg: var(--sl-color-warn-soft);
+	--text-highlight-bg-active: var(--sl-color-accent-soft);
+
+	/* Controls. */
+	--interactive-normal: var(--sl-color-surface);
+	--interactive-hover: var(--sl-color-hover);
+	--interactive-accent: var(--sl-color-accent);
+	--interactive-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+	--interactive-accent-hover: var(--sl-color-accent-hover);
+
+	--divider-color: var(--sl-color-border);
+	--divider-color-hover: var(--sl-color-accent-edge);
+	--icon-color: var(--sl-color-text-2);
+	--icon-color-hover: var(--sl-color-text);
+	--icon-color-active: var(--sl-color-accent-text);
+	--icon-color-focused: var(--sl-color-text);
+
+	/* Links. */
+	--link-color: var(--sl-color-accent-text);
+	--link-color-hover: var(--sl-color-accent-edge);
+	--link-decoration: underline;
+	--link-decoration-hover: underline;
+	--link-external-color: var(--sl-color-accent-text);
+	--link-external-color-hover: var(--sl-color-accent-edge);
+	--link-external-decoration: underline;
+	--link-unresolved-color: var(--sl-color-muted);
+	--link-unresolved-opacity: 1;
+	--link-unresolved-decoration-style: dotted;
+	--link-unresolved-decoration-color: var(--sl-color-muted);
+
+	/* Inputs and toggles: the edge is the cue, so it uses border-strong. */
+	--checkbox-color: var(--sl-color-accent);
+	--checkbox-color-hover: var(--sl-color-accent-hover);
+	--checkbox-marker-color: var(--sl-color-on-accent);
+	--checkbox-border-color: var(--sl-color-border-strong);
+	--checkbox-border-color-hover: var(--sl-color-text);
+	--toggle-border-width: 2px;
+	--toggle-thumb-color: var(--sl-color-border-strong);
+	--slider-thumb-border-color: var(--sl-color-border-strong);
+	--slider-track-background: var(--sl-color-raised);
+
+	/* Navigation, tabs and chrome. */
+	--nav-item-color: var(--sl-color-text-2);
+	--nav-item-color-hover: var(--sl-color-text);
+	--nav-item-color-active: var(--sl-color-text);
+	--nav-item-color-selected: var(--sl-color-text);
+	--nav-item-background-hover: var(--sl-color-hover);
+	--nav-item-background-active: var(--sl-color-accent-soft);
+	--nav-item-background-selected: var(--sl-color-accent-soft);
+	--nav-collapse-icon-color: var(--sl-color-muted);
+	--nav-collapse-icon-color-collapsed: var(--sl-color-muted);
+	--nav-indentation-guide-color: var(--sl-color-border);
+	--tab-background-active: var(--sl-color-bg);
+	--tab-text-color: var(--sl-color-muted);
+	--tab-text-color-active: var(--sl-color-text);
+	--tab-text-color-focused: var(--sl-color-text-2);
+	--tab-text-color-focused-active: var(--sl-color-text);
+	--tab-text-color-focused-highlighted: var(--sl-color-accent-text);
+	--tab-text-color-focused-active-current: var(--sl-color-text);
+	--tab-container-background: var(--sl-color-panel);
+	--tab-divider-color: var(--sl-color-border);
+	--tab-outline-color: var(--sl-color-border);
+	--tab-outline-width: 1px;
+	--tab-curve: 0px;
+	--tab-radius: 0;
+	--tab-radius-active: 0;
+	--titlebar-background: var(--sl-color-panel);
+	--titlebar-background-focused: var(--sl-color-panel);
+	--titlebar-text-color: var(--sl-color-muted);
+	--titlebar-text-color-focused: var(--sl-color-text);
+	--ribbon-background: var(--sl-color-panel);
+	--ribbon-background-collapsed: var(--sl-color-bg);
+	--status-bar-background: var(--sl-color-panel);
+	--status-bar-border-color: var(--sl-color-border);
+	--status-bar-text-color: var(--sl-color-muted);
+	--status-bar-font-size: var(--font-ui-smaller);
+	--status-bar-radius: 0;
+	--vault-profile-color: var(--sl-color-text);
+	--vault-profile-color-hover: var(--sl-color-text);
+	--workspace-background-translucent: var(--sl-color-panel);
+
+	/* Scrollbars: square, 10 px. */
+	--scrollbar-bg: var(--sl-color-panel);
+	--scrollbar-thumb-bg: var(--sl-color-border-2);
+	--scrollbar-active-thumb-bg: var(--sl-color-border-strong);
+
+	/* Writing. */
+	--tag-color: var(--sl-color-accent-text);
+	--tag-color-hover: var(--sl-color-accent-text);
+	--tag-background: var(--sl-color-accent-soft);
+	--tag-background-hover: var(--sl-color-accent-soft);
+	--tag-border-color: transparent;
+	--tag-border-color-hover: var(--sl-color-accent-edge);
+	--tag-border-width: 1px;
+	--tag-size: var(--font-smaller);
+	--tag-padding-x: 0.6em;
+	--tag-padding-y: 0.1em;
+	--tag-decoration: none;
+	--tag-decoration-hover: none;
+	--blockquote-border-thickness: 2px;
+	--blockquote-border-color: var(--sl-color-border-strong);
+	--blockquote-color: var(--sl-color-text-2);
+	--blockquote-background-color: transparent;
+	--blockquote-style: normal;
+	--hr-color: var(--sl-color-border-2);
+	--hr-thickness: 2px;
+	--list-marker-color: var(--sl-color-muted);
+	--list-marker-color-hover: var(--sl-color-text);
+	--list-marker-color-collapsed: var(--sl-color-accent-text);
+	--bold-color: var(--sl-color-text);
+	--italic-color: var(--sl-color-text);
+	--embed-border-left: 2px solid var(--sl-color-border-2);
+	--embed-padding: 0 0 0 var(--sl-space-12);
+	--footnote-size: 0.8em;
+	--collapse-icon-color: var(--sl-color-muted);
+	--collapse-icon-color-collapsed: var(--sl-color-accent-text);
+
+	/* Code. */
+	--code-background: var(--sl-color-panel);
+	--code-normal: var(--sl-color-text);
+	--code-comment: var(--sl-color-muted);
+	--code-punctuation: var(--sl-color-text-2);
+	--code-operator: var(--sl-color-text-2);
+	--code-keyword: var(--sl-color-agent);
+	--code-function: var(--sl-color-accent-text);
+	--code-important: var(--sl-color-crit);
+	--code-property: var(--sl-color-text);
+	--code-tag: var(--sl-color-crit);
+	--code-string: var(--sl-color-ok);
+	--code-value: var(--sl-color-warn);
+	--code-size: 0.9em;
+
+	/* Tables. */
+	--table-border-width: 1px;
+	--table-border-color: var(--sl-color-border-2);
+	--table-header-background: var(--sl-color-panel);
+	--table-header-background-hover: var(--sl-color-hover);
+	--table-header-border-width: 1px;
+	--table-header-border-color: var(--sl-color-border-2);
+	--table-header-font: inherit;
+	--table-header-size: 0.8em;
+	--table-header-weight: 500;
+	--table-header-color: var(--sl-color-muted);
+	--table-text-size: inherit;
+	--table-column-min-width: 6ch;
+	--table-row-background-hover: var(--sl-color-hover);
+	--table-selection: var(--sl-color-accent-soft);
+	--table-selection-border-color: var(--sl-color-accent-edge);
+	--table-selection-border-width: 1px;
+	--table-add-button-background: var(--sl-color-surface);
+	--table-add-button-border-color: var(--sl-color-border-2);
+
+	/* Callouts. */
+	--callout-border-width: 1px;
+	--callout-border-opacity: 0.45;
+	--callout-padding: var(--sl-space-12) var(--sl-space-14);
+	--callout-title-padding: 0;
+	--callout-title-size: 1em;
+	--callout-title-weight: 700;
+	--callout-content-padding: 0;
+	--callout-blend-mode: normal;
+
+	/* Properties and file metadata. */
+	--metadata-label-text-color: var(--sl-color-muted);
+	--metadata-input-text-color: var(--sl-color-text);
+	--metadata-divider-color: var(--sl-color-border);
+	--metadata-property-radius: 0;
+	--metadata-property-background-hover: var(--sl-color-hover);
+	--metadata-property-box-shadow-hover: none;
+
+	/* Graph. */
+	--graph-line: var(--sl-color-border-2);
+	--graph-node: var(--sl-color-text-2);
+	--graph-node-unresolved: var(--sl-color-muted);
+	--graph-node-focused: var(--sl-color-accent);
+	--graph-node-tag: var(--sl-color-ok);
+	--graph-node-attachment: var(--sl-color-warn);
+	--graph-text: var(--sl-color-text);
+
+	/* Popovers and menus. */
+	--prompt-border-color: var(--sl-color-border-2);
+	--modal-border-color: var(--sl-color-border-2);
+	--popover-pdf-width: 600px;
+	--popover-width: 450px;
+	--drag-ghost-background: var(--sl-color-surface);
+	--drag-ghost-text-color: var(--sl-color-text);
+	--canvas-color: var(--sl-color-border-2);
+}

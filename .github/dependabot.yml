@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      dev-dependencies:
+        dependency-type: development
+        update-types: [minor, patch]
+    ignore:
+      # wdio-obsidian-service peers webdriverio ^9, and @wdio/mocha-framework ships its own
+      # mocha: a second, newer top-level mocha breaks loading the specs. Bump these with the service.
+      - dependency-name: '@wdio/*'
+        update-types: ['version-update:semver-major']
+      - dependency-name: webdriverio
+        update-types: ['version-update:semver-major']
+      - dependency-name: mocha
+        update-types: ['version-update:semver-major']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

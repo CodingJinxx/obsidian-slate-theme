@@ -1,0 +1,60 @@
+name: Release
+
+# Push a tag that equals the version in manifest.json (no leading "v") on the merged `main` commit.
+# `main` only changes through pull requests, so merge the release PR first (see CONTRIBUTING.md), then:
+#   git switch main && git pull && git tag 0.2.0 && git push origin 0.2.0
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24.x
+
+      - name: Verify tag matches manifest.json and package.json
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          manifest=$(node -p "require('./manifest.json').version")
+          pkg=$(node -p "require('./package.json').version")
+          if [ "$tag" != "$manifest" ]; then echo "::error::Tag $tag does not match manifest.json version $manifest"; exit 1; fi
+          if [ "$tag" != "$pkg" ]; then echo "::error::Tag $tag does not match package.json version $pkg"; exit 1; fi
+
+      - run: node scripts/build.mjs --check
+      - run: node scripts/check.mjs
+
+      - name: Attest build provenance
+        uses: actions/attest@v4
+        with:
+          subject-path: theme.css
+
+      - name: Release notes from CHANGELOG.md
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          awk -v v="$tag" '
+            $0 ~ "^## [[]?" v "[]]?( |$)" { found = 1; next }
+            found && /^## / { exit }
+            found { print }
+          ' CHANGELOG.md > release-notes.md
+          [ -s release-notes.md ] || echo "See CHANGELOG.md." > release-notes.md
+
+      - name: Create draft release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          gh release create "$tag" \
+            --title "$tag" \
+            --notes-file release-notes.md \
+            --draft \
+            theme.css manifest.json

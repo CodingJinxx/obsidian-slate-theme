@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+
+# test output
+.wdio-vaults/
+.obsidian-cache/
+test/screenshots/
+
+# editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# local Obsidian data when the repo is opened as a vault
+.obsidian/

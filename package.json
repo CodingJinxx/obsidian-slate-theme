@@ -1,0 +1,28 @@
+{
+	"name": "obsidian-slate-theme",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Slate, a dense, calm, monospace theme for Obsidian based on the Slate design system.",
+	"license": "PolyForm-Noncommercial-1.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "node scripts/build.mjs",
+		"check": "node scripts/build.mjs --check && node scripts/check.mjs",
+		"screenshots": "wdio run ./wdio.conf.mts"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^22.20.5",
+		"@wdio/cli": "^9.32.0",
+		"@wdio/globals": "^9.31.3",
+		"@wdio/local-runner": "^9.32.0",
+		"@wdio/mocha-framework": "^9.32.0",
+		"@wdio/spec-reporter": "^9.32.0",
+		"mocha": "^10.8.2",
+		"obsidian-launcher": "^3.3.0",
+		"tsx": "^4.23.15",
+		"typescript": "^5.9.3",
+		"wdio-obsidian-reporter": "^3.3.0",
+		"wdio-obsidian-service": "^3.3.0"
+	}
+}

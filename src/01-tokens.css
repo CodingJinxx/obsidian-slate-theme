@@ -1,0 +1,132 @@
+/* ---- Slate design tokens ----------------------------------------------
+ * Values come from the Slate design system (tokens.json). They are declared
+ * once here under the --sl- prefix; every other file uses them through
+ * var(), and the next file maps them onto Obsidian's own variables.
+ * Light is Obsidian's light theme, dark is Obsidian's dark theme.
+ */
+
+body {
+	--sl-space-2: 2px;
+	--sl-space-4: 4px;
+	--sl-space-6: 6px;
+	--sl-space-8: 8px;
+	--sl-space-10: 10px;
+	--sl-space-12: 12px;
+	--sl-space-14: 14px;
+	--sl-space-16: 16px;
+	--sl-space-20: 20px;
+	--sl-space-26: 26px;
+	--sl-space-32: 32px;
+	--sl-space-48: 48px;
+
+	--sl-size-control-sm: 22px;
+	--sl-size-control-md: 26px;
+	--sl-size-control-lg: 32px;
+	--sl-size-tab: 30px;
+	--sl-size-row: 32px;
+	--sl-size-scrollbar: 10px;
+
+	--sl-border-width: 1px;
+	--sl-border-width-strong: 2px;
+	--sl-focus-offset: 1px;
+
+	--sl-font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+	/* Ember: the one brand colour, the same in both themes. */
+	--sl-ember: #e8823a;
+	--sl-ember-hover: #ee9758;
+	--sl-ember-ink: #1c0d04;
+}
+
+.theme-light {
+	--sl-color-bg: #f4f3ef;
+	--sl-color-panel: #ecebe6;
+	--sl-color-surface: #ffffff;
+	--sl-color-raised: #e9e8e2;
+	--sl-color-hover: #eeede8;
+	--sl-color-border: #dedcd4;
+	--sl-color-border-2: #b9b6ac;
+	--sl-color-border-strong: #67645e;
+	--sl-color-text: #1b1b1a;
+	--sl-color-text-2: #46443f;
+	--sl-color-muted: #67645e;
+	--sl-color-accent: #e8823a;
+	--sl-color-accent-hover: #ee9758;
+	--sl-color-on-accent: #1c0d04;
+	--sl-color-accent-deep: #9c4a14;
+	--sl-color-accent-text: #9a440c;
+	--sl-color-accent-soft: rgba(232, 130, 58, 0.2);
+	--sl-color-accent-edge: #b5520f;
+	--sl-color-focus: #b5520f;
+	--sl-color-ok: #1c6e43;
+	--sl-color-ok-soft: rgba(31, 122, 74, 0.1);
+	--sl-color-warn: #755e07;
+	--sl-color-warn-soft: rgba(190, 155, 20, 0.17);
+	--sl-color-crit: #af3423;
+	--sl-color-crit-deep: #7a2014;
+	--sl-color-crit-soft: rgba(188, 56, 38, 0.09);
+	--sl-color-on-crit: #ffffff;
+	--sl-color-agent: #5f4ab8;
+	--sl-color-agent-soft: rgba(95, 74, 184, 0.09);
+	--sl-color-scrim: rgba(30, 28, 24, 0.38);
+	--sl-color-hard: rgba(27, 27, 26, 0.85);
+
+	--sl-shadow-press-accent: 2px 2px 0 #9c4a14;
+	--sl-shadow-press-crit: 2px 2px 0 #7a2014;
+	--sl-shadow-popover: 6px 6px 0 rgba(27, 27, 26, 0.85);
+	--sl-shadow-overlay: 8px 8px 0 rgba(27, 27, 26, 0.85);
+
+	/* The same colours as r, g, b triplets, for Obsidian's callouts. */
+	--sl-rgb-ok: 28, 110, 67;
+	--sl-rgb-warn: 117, 94, 7;
+	--sl-rgb-crit: 175, 52, 35;
+	--sl-rgb-agent: 95, 74, 184;
+	--sl-rgb-accent: 181, 82, 15;
+	--sl-rgb-neutral: 70, 68, 63;
+}
+
+.theme-dark {
+	--sl-color-bg: #0f1012;
+	--sl-color-panel: #131416;
+	--sl-color-surface: #17181b;
+	--sl-color-raised: #1f2024;
+	--sl-color-hover: #232429;
+	--sl-color-border: #26272c;
+	--sl-color-border-2: #3a3b41;
+	--sl-color-border-strong: #8f8c86;
+	--sl-color-text: #e6e4df;
+	--sl-color-text-2: #b9b6af;
+	--sl-color-muted: #8f8c86;
+	--sl-color-accent: #e8823a;
+	--sl-color-accent-hover: #ee9758;
+	--sl-color-on-accent: #1c0d04;
+	--sl-color-accent-deep: #7c3a12;
+	--sl-color-accent-text: #f09a5e;
+	--sl-color-accent-soft: rgba(232, 130, 58, 0.14);
+	--sl-color-accent-edge: #e8823a;
+	--sl-color-focus: #e8823a;
+	--sl-color-ok: #55b57f;
+	--sl-color-ok-soft: rgba(85, 181, 127, 0.13);
+	--sl-color-warn: #d9c24b;
+	--sl-color-warn-soft: rgba(217, 194, 75, 0.13);
+	--sl-color-crit: #eb6a56;
+	--sl-color-crit-deep: #6e2318;
+	--sl-color-crit-soft: rgba(235, 106, 86, 0.14);
+	--sl-color-on-crit: #1c0d04;
+	--sl-color-agent: #ae9cf0;
+	--sl-color-agent-soft: rgba(174, 156, 240, 0.13);
+	--sl-color-scrim: rgba(4, 4, 5, 0.66);
+	--sl-color-hard: rgba(0, 0, 0, 0.7);
+
+	--sl-shadow-press-accent: 2px 2px 0 #7c3a12;
+	--sl-shadow-press-crit: 2px 2px 0 #6e2318;
+	--sl-shadow-popover: 6px 6px 0 rgba(0, 0, 0, 0.7);
+	--sl-shadow-overlay: 8px 8px 0 rgba(0, 0, 0, 0.7);
+
+	--sl-rgb-ok: 85, 181, 127;
+	--sl-rgb-warn: 217, 194, 75;
+	--sl-rgb-crit: 235, 106, 86;
+	--sl-rgb-agent: 174, 156, 240;
+	--sl-rgb-accent: 232, 130, 58;
+	--sl-rgb-neutral: 185, 182, 175;
+}

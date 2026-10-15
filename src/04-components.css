@@ -1,0 +1,412 @@
+/* ---- Components --------------------------------------------------------
+ * Buttons, inputs, menus, dialogs and the writing surface, restyled to the
+ * Slate components: square edges, hard offset shadows, status as shape.
+ */
+
+/* Buttons: surface with a border; the call to action is ember with a hard
+ * press shadow that disappears with a 2 px translate. */
+body button:not(.clickable-icon):not(.mod-cta):not(.mod-warning) {
+	background-color: var(--sl-color-surface);
+	border: var(--sl-border-width) solid var(--sl-color-border-2);
+	color: var(--sl-color-text);
+	height: var(--sl-size-control-md);
+	padding: 0 var(--sl-space-10);
+	font-size: var(--font-ui-small);
+	box-shadow: none;
+}
+
+body button:not(.clickable-icon):not(.mod-cta):not(.mod-warning):hover {
+	background-color: var(--sl-color-hover);
+	border-color: var(--sl-color-border-strong);
+}
+
+body button.mod-cta {
+	background-color: var(--sl-color-accent);
+	border: var(--sl-border-width) solid var(--sl-color-accent-deep);
+	color: var(--sl-color-on-accent);
+	box-shadow: var(--sl-shadow-press-accent);
+	height: var(--sl-size-control-md);
+	font-size: var(--font-ui-small);
+	font-weight: 500;
+}
+
+body button.mod-cta:hover {
+	background-color: var(--sl-color-accent-hover);
+}
+
+body button.mod-warning {
+	background-color: var(--sl-color-crit);
+	border: var(--sl-border-width) solid var(--sl-color-crit-deep);
+	color: var(--sl-color-on-crit);
+	box-shadow: var(--sl-shadow-press-crit);
+	height: var(--sl-size-control-md);
+	font-size: var(--font-ui-small);
+	font-weight: 500;
+}
+
+body button.mod-cta:active,
+body button.mod-warning:active {
+	transform: translate(2px, 2px);
+	box-shadow: none;
+}
+
+body button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* Inputs, dropdowns, search boxes. */
+body :is(input[type='text'], input[type='search'], input[type='number'], input[type='password'], input[type='email'], input[type='url'], input[type='date'], input[type='datetime-local'], input[type='time'], textarea, select, .dropdown) {
+	background-color: var(--sl-color-surface);
+	border: var(--sl-border-width) solid var(--sl-color-border-2);
+	color: var(--sl-color-text);
+	box-shadow: none;
+}
+
+body :is(input[type='text'], input[type='search'], input[type='number'], input[type='password'], input[type='email'], input[type='url'], textarea, select, .dropdown):hover {
+	border-color: var(--sl-color-border-strong);
+	background-color: var(--sl-color-surface);
+}
+
+body :is(input[type='text'], input[type='search'], input[type='number'], input[type='password'], input[type='email'], input[type='url'], textarea, select, .dropdown):focus,
+body :is(input[type='text'], input[type='search'], input[type='number'], input[type='password'], input[type='email'], input[type='url'], textarea, select, .dropdown):focus-visible {
+	border-color: var(--sl-color-accent-edge);
+	box-shadow: none;
+}
+
+body input::placeholder,
+body textarea::placeholder {
+	color: var(--sl-color-muted);
+}
+
+/* Switches and checkboxes: the edge is the cue, so it is border-strong. */
+body .checkbox-container {
+	background-color: var(--sl-color-surface);
+	border: 2px solid var(--sl-color-border-strong);
+	box-shadow: none;
+}
+
+body .checkbox-container.is-enabled {
+	background-color: var(--sl-color-accent);
+	border-color: var(--sl-color-accent-deep);
+}
+
+body .checkbox-container:after {
+	background-color: var(--sl-color-border-strong);
+	box-shadow: none;
+}
+
+body .checkbox-container.is-enabled:after {
+	background-color: var(--sl-color-on-accent);
+}
+
+body input[type='checkbox'] {
+	border: 2px solid var(--sl-color-border-strong);
+}
+
+body input[type='checkbox']:checked {
+	background-color: var(--sl-color-accent);
+	border-color: var(--sl-color-accent-deep);
+}
+
+/* Menus, popovers and the command palette: hard shadow, 1 px border. */
+body .menu,
+body .suggestion-container,
+body .popover.hover-popover .markdown-embed,
+body .tooltip {
+	border: var(--sl-border-width) solid var(--sl-color-border-2);
+	box-shadow: var(--sl-shadow-popover);
+	background-color: var(--sl-color-surface);
+}
+
+body .tooltip {
+	box-shadow: 3px 3px 0 var(--sl-color-hard);
+	color: var(--sl-color-text);
+}
+
+body .menu-item.selected:not(.is-disabled):not(.is-label),
+body .menu-item:hover:not(.is-disabled):not(.is-label) {
+	background-color: var(--sl-color-hover);
+	color: var(--sl-color-text);
+}
+
+body .menu-item.mod-warning:hover,
+body .menu-item.mod-warning.selected {
+	background-color: var(--sl-color-crit-soft);
+	color: var(--sl-color-crit);
+}
+
+body .modal {
+	border: var(--sl-border-width) solid var(--sl-color-border-2);
+	box-shadow: var(--sl-shadow-overlay);
+	background-color: var(--sl-color-surface);
+}
+
+body .modal-bg {
+	background-color: var(--sl-color-scrim);
+	opacity: 1;
+}
+
+body .modal-title {
+	font-size: var(--font-ui-large);
+	font-weight: 500;
+}
+
+/* Command palette: the chosen row is solid ember, as in Slate's CommandPalette. */
+body .prompt {
+	border: var(--sl-border-width) solid var(--sl-color-border-2);
+	box-shadow: var(--sl-shadow-popover);
+	background-color: var(--sl-color-surface);
+}
+
+body .prompt-input {
+	height: 40px;
+	border: 0;
+	border-bottom: var(--sl-border-width) solid var(--sl-color-border-2);
+}
+
+body .suggestion-item.is-selected {
+	background-color: var(--sl-color-accent);
+	color: var(--sl-color-on-accent);
+}
+
+body .suggestion-item.is-selected :is(.suggestion-title, .suggestion-note, .suggestion-hotkey, .suggestion-flair, .suggestion-aux, .suggestion-content) {
+	color: var(--sl-color-on-accent);
+}
+
+/* Keys: a key cap with a heavier bottom edge. */
+body kbd,
+body .setting-hotkey,
+body .suggestion-hotkey {
+	border: var(--sl-border-width) solid var(--sl-color-border-2);
+	border-bottom-width: var(--sl-border-width-strong);
+	background-color: var(--sl-color-surface);
+	color: var(--sl-color-text-2);
+	font-size: var(--font-ui-smaller);
+	letter-spacing: 0.04em;
+}
+
+body .suggestion-item.is-selected .suggestion-hotkey {
+	background-color: transparent;
+	border-color: currentColor;
+}
+
+/* Settings: a row per setting, divided by a hairline. */
+body .setting-item {
+	border-top: var(--sl-border-width) solid var(--sl-color-border);
+}
+
+body .setting-item-heading {
+	border-top: var(--sl-border-width-strong) solid var(--sl-color-border-2);
+	font-size: var(--font-ui-small);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+body .vertical-tab-nav-item.is-active {
+	background-color: var(--sl-color-accent-soft);
+	box-shadow: inset 0 0 0 var(--sl-border-width) var(--sl-color-accent-edge);
+	color: var(--sl-color-text);
+}
+
+/* Workspace tabs: the active tab is the page colour with an ember top rule. */
+body .workspace-tab-header-container {
+	border-bottom: var(--sl-border-width) solid var(--sl-color-border);
+}
+
+body .workspace-tab-header.is-active {
+	position: relative;
+	background-color: var(--sl-color-bg);
+}
+
+body .workspace-tab-header.is-active::before {
+	content: '';
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: var(--sl-border-width-strong);
+	background-color: var(--sl-color-accent);
+	z-index: 1;
+	pointer-events: none;
+}
+
+body .workspace-tab-header:not(.is-active):hover {
+	background-color: var(--sl-color-hover);
+}
+
+body .workspace-tab-header-tab-list .clickable-icon:hover,
+body .clickable-icon:hover {
+	background-color: var(--sl-color-hover);
+}
+
+/* File explorer and other trees: selected row is the ember wash with a 1 px edge. */
+body .tree-item-self:hover {
+	background-color: var(--sl-color-hover);
+}
+
+body .tree-item-self.is-active,
+body .tree-item-self.is-selected {
+	background-color: var(--sl-color-accent-soft);
+	box-shadow: inset 0 0 0 var(--sl-border-width) var(--sl-color-accent-edge);
+	color: var(--sl-color-text);
+}
+
+body .nav-file-title.is-active,
+body .nav-folder-title.is-active {
+	background-color: var(--sl-color-accent-soft);
+	box-shadow: inset 0 0 0 var(--sl-border-width) var(--sl-color-accent-edge);
+	color: var(--sl-color-text);
+}
+
+body .nav-header .nav-buttons-container {
+	gap: var(--sl-space-2);
+}
+
+/* Status bar and sidebars. */
+body .status-bar {
+	border-top: var(--sl-border-width) solid var(--sl-color-border);
+	letter-spacing: 0.02em;
+}
+
+body .workspace-ribbon {
+	border-right: var(--sl-border-width) solid var(--sl-color-border);
+}
+
+body .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+body .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+	background-color: var(--sl-color-border);
+}
+
+/* Tags are small badges: lower case, ember wash. */
+body .tag,
+body a.tag,
+body .cm-s-obsidian span.cm-hashtag {
+	background-color: var(--sl-color-accent-soft);
+	color: var(--sl-color-accent-text);
+	border: var(--sl-border-width) solid transparent;
+	text-transform: lowercase;
+	letter-spacing: 0.04em;
+	font-weight: 500;
+}
+
+body .tag:hover,
+body a.tag:hover {
+	border-color: var(--sl-color-accent-edge);
+}
+
+/* Tables: caps headers, 1 px grid, quiet row hover. */
+.markdown-rendered table th,
+.markdown-source-view.mod-cm6 .cm-table-widget th {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: 500;
+}
+
+.markdown-rendered table tr:hover td {
+	background-color: var(--sl-color-hover);
+}
+
+/* Callouts: square, a 1 px edge and a soft wash in the tone colour, bold lower-case title.
+ * The tones come from Slate's status colours, not from --callout-color, because
+ * Obsidian changed that variable from an r, g, b triplet to a colour between versions. */
+body .callout {
+	--sl-callout: var(--sl-color-border-strong);
+	--sl-callout-text: var(--sl-color-text-2);
+	--sl-callout-soft: var(--sl-color-panel);
+	border: var(--sl-border-width) solid var(--sl-callout);
+	background-color: var(--sl-callout-soft);
+	mix-blend-mode: normal;
+}
+
+body .callout :is(.callout-title, .callout-title-inner, .callout-icon, .callout-icon .svg-icon) {
+	color: var(--sl-callout-text);
+}
+
+body .callout[data-callout='tip'],
+body .callout[data-callout='hint'],
+body .callout[data-callout='important'],
+body .callout[data-callout='success'],
+body .callout[data-callout='check'],
+body .callout[data-callout='done'] {
+	--sl-callout: var(--sl-color-ok);
+	--sl-callout-text: var(--sl-color-ok);
+	--sl-callout-soft: var(--sl-color-ok-soft);
+}
+
+body .callout[data-callout='warning'],
+body .callout[data-callout='caution'],
+body .callout[data-callout='attention'],
+body .callout[data-callout='question'],
+body .callout[data-callout='help'],
+body .callout[data-callout='faq'] {
+	--sl-callout: var(--sl-color-warn);
+	--sl-callout-text: var(--sl-color-warn);
+	--sl-callout-soft: var(--sl-color-warn-soft);
+}
+
+body .callout[data-callout='danger'],
+body .callout[data-callout='error'],
+body .callout[data-callout='failure'],
+body .callout[data-callout='fail'],
+body .callout[data-callout='missing'],
+body .callout[data-callout='bug'] {
+	--sl-callout: var(--sl-color-crit);
+	--sl-callout-text: var(--sl-color-crit);
+	--sl-callout-soft: var(--sl-color-crit-soft);
+}
+
+body .callout[data-callout='example'],
+body .callout[data-callout='abstract'],
+body .callout[data-callout='summary'],
+body .callout[data-callout='tldr'] {
+	--sl-callout: var(--sl-color-agent);
+	--sl-callout-text: var(--sl-color-agent);
+	--sl-callout-soft: var(--sl-color-agent-soft);
+}
+
+body .callout-title {
+	text-transform: lowercase;
+	letter-spacing: 0.04em;
+	gap: var(--sl-space-8);
+}
+
+body .callout-content {
+	padding-top: var(--sl-space-6);
+}
+
+body .callout-content > :first-child {
+	margin-top: 0;
+}
+
+body .callout-content > :last-child {
+	margin-bottom: 0;
+}
+
+/* Inline code and code blocks sit in a panel well with a hairline. */
+.markdown-rendered :not(pre) > code,
+.markdown-source-view.mod-cm6 .cm-inline-code {
+	border: var(--sl-border-width) solid var(--sl-color-border);
+	padding: 0 var(--sl-space-4);
+}
+
+.markdown-rendered pre {
+	border: var(--sl-border-width) solid var(--sl-color-border);
+}
+
+/* Task checkboxes follow the checkbox colours above; done tasks are muted. */
+.markdown-rendered .task-list-item.is-checked,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='x'] {
+	color: var(--sl-color-muted);
+}
+
+/* Highlights keep readable text on the warn wash. */
+.markdown-rendered mark,
+.markdown-source-view.mod-cm6 .cm-highlight {
+	color: var(--sl-color-text);
+}
+
+/* Reduced motion: stepped state changes only. */
+@media (prefers-reduced-motion: reduce) {
+	body * {
+		transition-duration: 0s;
+	}
+}
