@@ -4,6 +4,8 @@ All notable changes to this theme are documented here. The format follows [Keep 
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-15
+
 ### Changed
 
 - Smaller `theme.css` (53 KB instead of 116 KB): the embedded JetBrains Mono is now a Latin subset in weights 400 and 700 (weight 500 renders as regular), as Obsidian's review recommends. `npm run check` fails above 100 KB.
@@ -21,5 +23,6 @@ First public release, under the [PolyForm Noncommercial License 1.0.0](LICENSE):
 - Funding link (Buy Me a Coffee) in `manifest.json`, the README and GitHub's Sponsor button.
 - Build script, theme checks and a screenshot recorder that drives a real Obsidian.
 
-[Unreleased]: https://github.com/CodingJinxx/obsidian-slate-theme/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/CodingJinxx/obsidian-slate-theme/compare/0.1.1...HEAD
+[0.1.1]: https://github.com/CodingJinxx/obsidian-slate-theme/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/CodingJinxx/obsidian-slate-theme/releases/tag/0.1.0
