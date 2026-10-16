@@ -19,11 +19,9 @@ Slate is the Obsidian version of the **Slate design system**: the same tokens (c
 
 ## Install
 
-**From the community list** (once it is accepted): *Settings → Appearance → Themes → Manage*, search for **Slate**, then *Install and use*.
+**From Obsidian:** *Settings → Appearance → Themes → Manage*, search for **Slate**, then *Install and use*. Updates arrive through the same dialog.
 
-**Today, with BRAT:** install the [BRAT](https://github.com/TfTHacker/obsidian42-brat) plugin, run *BRAT: Add a beta theme for testing*, and enter `CodingJinxx/obsidian-slate-theme`.
-
-**By hand:** download `theme.css` and `manifest.json` from the [latest release](https://github.com/CodingJinxx/obsidian-slate-theme/releases/latest) into a folder named `Slate` inside `<your vault>/.obsidian/themes/`, then pick *Slate* under *Settings → Appearance → Themes*.
+**By hand** (for example in a vault without internet access): download `theme.css` and `manifest.json` from the [latest release](https://github.com/CodingJinxx/obsidian-slate-theme/releases/latest) into a folder named `Slate` inside `<your vault>/.obsidian/themes/`, then pick *Slate* under *Settings → Appearance → Themes*.
 
 Nothing is loaded from the network: the font is embedded in `theme.css` as a Latin subset (`scripts/subset-fonts.py`).
 

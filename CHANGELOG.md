@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. The format follows [Keep 
 
 ## [Unreleased]
 
+### Changed
+
+- README: installation now points to the community theme list, where Slate is published.
+
 ## [0.1.1] - 2026-10-15
 
 ### Changed
