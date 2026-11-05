@@ -19,10 +19,10 @@
 		"@wdio/mocha-framework": "^9.32.0",
 		"@wdio/spec-reporter": "^9.32.0",
 		"mocha": "^10.8.2",
-		"obsidian-launcher": "^3.3.0",
+		"obsidian-launcher": "^3.5.0",
 		"tsx": "^4.23.15",
 		"typescript": "^5.9.3",
-		"wdio-obsidian-reporter": "^3.3.0",
-		"wdio-obsidian-service": "^3.3.0"
+		"wdio-obsidian-reporter": "^3.5.0",
+		"wdio-obsidian-service": "^3.5.0"
 	}
 }
